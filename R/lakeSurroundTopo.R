@@ -58,7 +58,7 @@ lakeSurroundTopo <- function(inLake, inElev = NULL, inCatch = NULL,
   ymax <- extent(tmpBuff)@ymax
   xmin <- extent(tmpBuff)@xmin
   ymin <- extent(tmpBuff)@ymin
-  lakepr <- rasterize(inLake, raster(xmn = xmin, xmx = xmax, ymn = ymin, ymx = ymax,
+  lakepr <- fasterize::fasterize(inLake, raster(xmn = xmin, xmx = xmax, ymn = ymin, ymx = ymax,
       nrows = nr, ncols = nc, crs = CRS(sf::st_crs(inLake)$wkt)))
   lakepr2 <- lakepr
   lakepr2[is.na(lakepr2)] <- 0

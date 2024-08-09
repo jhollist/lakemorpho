@@ -36,5 +36,6 @@ Imports:
     sp,
     sf,
     geosphere,
-    cluster
+    cluster,
+    fasterize
 RoxygenNote: 7.2.3
