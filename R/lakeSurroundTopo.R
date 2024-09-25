@@ -42,8 +42,8 @@ lakeSurroundTopo <- function(inLake, inElev = NULL, inCatch = NULL,
   #slot(inLake, "polygons") <- lapply(slot(inLake, "polygons"), checkPolygonsHoles)
   # Ignores lakes smaller that 3X3 30 m pixels
   
-  if (as.numeric(sf::st_area(inLake)) <= 8100) {
-      return(NULL)
+  if (as.numeric(sf::st_area(inLake)) <= (reso*3)^2) {
+      warning("The input lake polygon is very small and resulting metrics may not make sense.")
   }
   tmpBuff <- sf::st_buffer(inLake, dist = 180)
   nc <- round((extent(tmpBuff)@xmax - extent(tmpBuff)@xmin)/reso)

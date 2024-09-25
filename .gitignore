@@ -7,3 +7,4 @@ inst/doc
 inst/extdata
 R/gam_depth.R
 bugs
+raster_maxlength

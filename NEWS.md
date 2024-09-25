@@ -5,6 +5,7 @@ lakemorpho 1.3.3 (2024-XX-xx)
 
 ## Updates
 - Added fasterize for rasterizing lakes
+- lakeSurroundTopo: size check for small lakes assumed 30 meter pixels and returned NULL.  Changed this to use reso to determine size check, still creates lake morpho object but with a warning.
 
 lakemorpho 1.3.2 (2023-09-15)
 ==========================
